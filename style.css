@@ -1,35 +1,26 @@
-body {
+/* General Reset */
+* {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #1e1e1e;
-    color: #ffffff;
-}
-
-header {
-    background-color: #ff4757;
-    padding: 20px;
-    text-align: center;
-}
-
-header nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration:  none;
-}
-
-.anime-list {
-    padding: 40px 20px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
     background-color: #111;
-    color: white;
+    color: #fff;
+  }
+  
+  /* Header Section */
+  header {
+    background-color: #222;
+    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
   }
   
   .anime-header-card {
     position: relative;
-    width: 100%;
     max-width: 250px;
     border-radius: 10px;
     overflow: hidden;
@@ -76,5 +67,73 @@ header nav a {
     color: white;
     cursor: pointer;
     border-radius: 5px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  
+  /* Anime List */
+  .anime-list {
+    padding: 40px 20px;
+    background-color: #111;
+    text-align: center;
+  }
+  
+  .anime-list h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  /* Anime Card */
+  .anime-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 250px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .anime-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .anime-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .anime-card button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #aaa;
   }
   
