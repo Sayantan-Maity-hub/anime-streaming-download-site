@@ -54,3 +54,23 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+.anime-list {
+    padding: 40px 20px;
+    background-color: #111;
+    color: white;
+  }
+  
+  .anime-list h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  .anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
