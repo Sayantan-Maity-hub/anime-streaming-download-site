@@ -23,17 +23,6 @@ header nav a {
     padding: 50px 20px;
 }
 
-.anime-list {
-    padding: 20px;
-}
-
-.anime-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
 .anime-card img {
     width: 100%;
     border-radius: 8px;
@@ -49,11 +38,7 @@ header nav a {
     cursor: pointer;
 }
 
-footer {
-    background-color: #2f3542;
-    text-align: center;
-    padding: 10px;
-}
+
 
 .anime-list {
     padding: 40px 20px;
@@ -73,4 +58,10 @@ footer {
     gap: 20px;
     justify-items: center;
   }
+
+  footer {
+    background-color: #2f3542;
+    text-align: center;
+    padding: 10px;
+}
   
