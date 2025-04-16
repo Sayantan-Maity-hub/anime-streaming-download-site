@@ -18,6 +18,13 @@
     display: flex;
     justify-content: center;
   }
+
+  .header-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   
   .anime-header-card {
     position: relative;
