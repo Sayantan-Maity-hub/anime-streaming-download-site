@@ -21,6 +21,8 @@
 
   
   .anime-header-card {
+    width: 200px;
+    height: 300px;
     position: relative;
     max-width: 250px;
     border-radius: 10px;
