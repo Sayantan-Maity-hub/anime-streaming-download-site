@@ -29,12 +29,14 @@
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
   }
   
   
   .anime-header-card img {
     width: 100%;
     height: auto;
+    object-fit: cover;
     display: block;
     transition: 0.3s ease;
   }
