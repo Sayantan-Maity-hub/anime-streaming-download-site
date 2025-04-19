@@ -1,4 +1,4 @@
-const navLinks = document.querySelectorAll('.nav-links li');
+const navLinks = document.querySelectorAll('.nav li');
 const indicator = document.querySelector('.indicator');
 
 navLinks.forEach(link => {
