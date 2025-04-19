@@ -1,205 +1,258 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-  }
-  
-  /* Header Section */
-  header {
-    background-color: #222;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
-  .anime-header-card {
-    width: 200px;
-    height: 300px;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    flex-shrink: 0;
-  }
-  
-  
-  .anime-header-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
 
-  .card-title {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0.7);
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    z-index: 1;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+/* Header Section */
+header {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+}
 
-    background-color: rgba(0, 0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    opacity: 0;
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
 
-    transition: background-color 0.3 ease, opacity 0.3 ease;
-    z-index: 2;
-    pointer-events: none;
-  }
-  
-  
-  .anime-header-card:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 1;
-    pointer-events: auto;
-  }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+}
 
-  .overlay button {
-    padding:  8px 12px;
-    background: #ff4500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.title {
+  font-size: 24px;
+}
 
-  .overlay button:hover {
-    background: #e03e00;
-  }
-  
-  .anime-header-card h1 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
+.nav-links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0 20px;
+}
 
-  .overlay h1 {
-    text-align: center;
-    padding: 0 10px;
-    word-wrap: break-word;
-    max-width: 100%;
-  }
+.nav-links li {
+  margin: 0 15px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0;
+}
 
-  .overlay h1,
-  .overlay button {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+.indicator {
+ height: 3px;
+  position: absolute;
+  background: linear-gradient(to right, transparent, red, orange, white);
+  box-shadow: 0 0 15px red, 0 0 30px orange;
+  border-radius: 50px;
+  top: 100%;
+  left: 0;
+  width: 0;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
 
-  .anime-header-card:hover .overlay h1,
-  .anime-header-card:hover .overlay button {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .anime-header-card button {
-    margin: 5px;
-    padding: 8px 16px;
-    border: none;
-    background-color: #ff6b6b;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+.search {
+  padding: 5px;
+  margin-left: auto;
+  border: none;
+  border-radius: 4px;
+}
 
-  .header-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  
-  /* Hero Section */
-  .hero {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #1a1a1a;
-  }
-  
-  .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    color: #ccc;
-  }
-  
-  /* Anime List */
-  .anime-list {
-    padding: 40px 20px;
-    background-color: #111;
-    text-align: center;
-  }
-  
-  .anime-list h2 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
-  
-  /* Anime Card */
-  .anime-card {
-    background-color: #222;
-    border-radius: 10px;
-    padding: 15px;
-    max-width: 250px;
-    margin: 0 auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  }
-  
-  .anime-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .anime-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .anime-card button {
-    margin: 5px;
-    padding: 8px 16px;
-    border: none;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: #aaa;
-  }
-  
+.nav-links li:hover {
+  color: red;
+}
+
+.anime-header-card {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.anime-header-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0.7);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+
+  transition: background-color 0.3 ease, opacity 0.3 ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+.anime-header-card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay button {
+  padding:  8px 12px;
+  background: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #e03e00;
+}
+
+.anime-header-card h1 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.overlay h1 {
+  text-align: center;
+  padding: 0 10px;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.overlay h1,
+.overlay button {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.anime-header-card:hover .overlay h1,
+.anime-header-card:hover .overlay button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anime-header-card button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff6b6b;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+/* Hero Section */
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Anime List */
+.anime-list {
+  padding: 40px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+.anime-list h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Anime Card */
+.anime-card {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 250px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.anime-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.anime-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.anime-card button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #aaa;
+}

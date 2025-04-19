@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hindi Anime</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Anime Navigation Bar</title>
 </head>
-
 <body>
-    <header>
-        <div class="header-container">
-            <!--Naruto-->
-            <div class="anime-header-card">
-                <img src="assets/naruto.jpg" alt="Naruto Poster" />
-                <div class="card-title">Naruto</div>
-                <div class="overlay">
-                    <h1>Naruto(hindi)</h1>
-                    <div class="button-group">
-                        <a href="stream/naruto.html"><button>Stream</button></a>
-                        <a href="downloads/naruto.html"><button>Download</button></a>
-                    </div>
-                </div>
-            </div>    
-            <!--onepiece-->
-            <div class="anime-header-card">
-                <img src="assets/onepiece.jpg" alt="onepiece poster" />
-                <div class="card-title">One Piece</div>
-                <div class="overlay">
-                    <h1>Onepiece(hindi)</h1>
-                    <div class="button-group">
-                        <a href="stream/onepiece.html"><button>Stream</button></a>
-                        <a href="downloads/onepiece.html"><button>Download</button></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!--Attack on titan-->
-            <div class="anime-header-card">
-                <img src="assets/attackontitan.jpg" alt="attackontitan poster">
-                <div class="card-title">Attack On Titan</div>
-                <div class="overlay">
-                    <h1>Attack On Titan(hindi)</h1>
-                    <div class="button-group">
-                        <a href="stream/attackontitan.html"><button>Stream</button></a>
-                        <a href="downloads/attackontitan.html"><button>Download</button></a>
-                    </div>
-                
+    <div class="navbar">
+        <div class="title">Hindi Anime</div>
+        <ul class="nav-links">
+            <li>Home</li>
+            <li>Anime</li>
+            <li>Genres</li>
+            <li>Collections</li>
+        </ul>
+        <input type="text" class="search" placeholder="Search anime">
+        <div class="indicator"></div>
+    </div>
+  
+
+
+    <div class="header-container">
+        <!--Naruto-->
+        <div class="anime-header-card">
+            <img src="assets/naruto.jpg" alt="Naruto Poster" />
+            <div class="card-title">Naruto</div>
+            <div class="overlay">
+                <h1>Naruto(hindi)</h1>
+                <div class="button-group">
+                    <a href="stream/naruto.html"><button>Stream</button></a>
+                    <a href="downloads/naruto.html"><button>Download</button></a>
                 </div>
             </div>
-        
-            
-        </div>    
-    </header>
+        </div>
+        <!--onepiece-->
+        <div class="anime-header-card">
+            <img src="assets/onepiece.jpg" alt="onepiece poster" />
+            <div class="card-title">One Piece</div>
+            <div class="overlay">
+                <h1>Onepiece(hindi)</h1>
+                <div class="button-group">
+                    <a href="stream/onepiece.html"><button>Stream</button></a>
+                    <a href="downloads/onepiece.html"><button>Download</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!--Attack on titan-->
+        <div class="anime-header-card">
+            <img src="assets/attackontitan.jpg" alt="attackontitan poster">
+            <div class="card-title">Attack On Titan</div>
+            <div class="overlay">
+                <h1>Attack On Titan(hindi)</h1>
+                <div class="button-group">
+                    <a href="stream/attackontitan.html"><button>Stream</button></a>
+                    <a href="downloads/attackontitan.html"><button>Download</button></a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
 
 
     <section class="hero">
