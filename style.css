@@ -5,29 +5,14 @@
   box-sizing: border-box;
 }
 
+/* add custom font */
 @font-face {
   font-family: 'supercreamy';
   src: url('assets/font/SuperCreamy-OGAPp.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'sayyeda';
-  src: url('assets/font/Sayyeda.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Avatar';
-  src: url('assets/font/Avatar\ Airbender.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Eternal';
-  src: url('assets/font/Eternal.ttf');
-}
 
 body {
   font-family: 'supercreamy', cursive, sans-serif;
@@ -137,6 +122,34 @@ header {
 
 .nav-links li:hover {
   color: #0ff;
+}
+
+ /* Carousel Shell */
+ .carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  gap: 20px;
+  animation: scrollAnime 30s linear infinite;
+  width: max-content;
+}
+
+.carousel-wrapper:hover .header-container {
+  animation-play-state: paused;
+}
+
+@keyframes scrollAnime {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .anime-header-card {
@@ -271,10 +284,13 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 1rem;
   padding: 20px;
   margin-top: 20px;
 }
+
+/* 3d rotating style */
+
 
 
 /* Hero Section */
@@ -344,3 +360,4 @@ footer {
   background-color: #222;
   color: #aaa;
 }
+
