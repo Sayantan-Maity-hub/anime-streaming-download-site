@@ -10,74 +10,82 @@ navLinks.forEach(link => {
     });
 });
 
-
-/* Clone cards for infinite effect */
+/* for center slide effect */
 let items = document.querySelectorAll('.header-container .anime-header-card');
 let next = document.getElementById('next');
 let prev = document.getElementById('prev');
 
-let active = 3; // Starting active item index
-let autoSlideInterval; // Variable to hold the interval
+let active = 3; // Starting from index 3
+let autoSlideInterval;
 
 function loadShow() {
-    let stt = 0;
-    items[active].style.transform = `none`;
-    items[active].style.zIndex = 1;
-    items[active].style.filter = 'none';
-    items[active].style.opacity = 1;
+    const total = items.length;
 
-    // Adjust items to the right of the active item
-    for (var i = active + 1; i < items.length; i++) {
-        stt++;
-        items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
-        items[i].style.zIndex = -stt;
-        items[i].style.filter = 'blur(3px)';
-        items[i].style.opacity = stt > 4 ? 0 : 0.6;
-    }
+    items.forEach((item, i) => {
+        let offset = (i - active + total) % total;
+        if (offset > total / 2) offset -= total;
+        const absOffset = Math.abs(offset);
 
-    // Adjust items to the left of the active item
-    stt = 0;
-    for (var i = active - 1; i >= 0; i--) {
-        stt++;
-        items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
-        items[i].style.zIndex = -stt;
-        items[i].style.filter = 'blur(3px)';
-        items[i].style.opacity = stt > 4 ? 0 : 0.6;
-    }
+        if (offset === 0) {
+            // Center card
+            item.style.zIndex = 10;
+            item.style.opacity = 1;
+            item.style.filter = 'none';
+            item.style.transform = `
+                translateX(50px) 
+                scale(1.05) 
+                perspective(1000px) 
+                rotateY(0deg)
+            `;
+        } else {
+            item.style.zIndex = -absOffset;
+            item.style.opacity = absOffset > 2 ? 0 : 1 - (0.4 * absOffset);
+            item.style.filter = absOffset > 2 ? 'blur(5px)' : 'blur(2px)';
+            item.style.transform = `
+                translateX(${offset * 120}px) 
+                scale(${1 - 0.2 * absOffset}) 
+                perspective(16px) 
+                rotateY(${offset < 0 ? 1 : -1}deg)
+            `;
+        }
+    });
 }
 
-// Function to move to the next item
+
 function nextItem() {
-    active = active + 1 < items.length ? active + 1 : 0; // Loop back to the first item
+    active = (active + 1) % items.length;
     loadShow();
 }
 
-// Function to move to the previous item
 function prevItem() {
-    active = active - 1 >= 0 ? active - 1 : items.length - 1; // Loop back to the last item
+    active = (active - 1 + items.length) % items.length;
     loadShow();
 }
 
-// Load the initial state
-loadShow();
-
-// Event listeners for next and previous buttons
-next.onclick = function() {
-    clearInterval(autoSlideInterval); // Clear the auto slide interval when manually changing slides
+// Manual controls
+next.onclick = function () {
+    clearInterval(autoSlideInterval);
     nextItem();
-    startAutoSlide(); // Restart auto slide
-}
+    startAutoSlide();
+};
 
-prev.onclick = function() {
-    clearInterval(autoSlideInterval); // Clear the auto slide interval when manually changing slides
+prev.onclick = function () {
+    clearInterval(autoSlideInterval);
     prevItem();
-    startAutoSlide(); // Restart auto slide
-}
+    startAutoSlide();
+};
 
-// Function to start auto sliding
+// Hover pause
+items.forEach(item => {
+    item.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+    item.addEventListener("mouseleave", () => startAutoSlide());
+});
+
+// Start everything
 function startAutoSlide() {
-    autoSlideInterval = setInterval(nextItem, 3000); // Change slide every 3 seconds
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextItem, 3000);
 }
 
-// Start the auto slide feature
+loadShow();
 startAutoSlide();

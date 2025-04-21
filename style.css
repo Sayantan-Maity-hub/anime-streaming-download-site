@@ -85,50 +85,54 @@ header {
 
 .nav {
   position: relative;
-  /* required for absolute children */
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 30px;
   list-style: none;
-  color: white;
   font-size: 18px;
+  position: relative;
+  margin: 0 auto; /* centers it */
 }
 
+
 .search {
-  padding: 6px 12px;
-  font-size: 16px;
+  padding: 10px 16px;
+  font-size: 18px;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
+
+.search:focus {
+  box-shadow: 0 0 10px #0ff;
+}
+
 
 
 .indicator {
   height: 3px;
   position: absolute;
+  bottom: -3px;
   background: linear-gradient(to right, transparent, #0ff, white);
   box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
   border-radius: 50px;
-  top: 100%;
-  left: 0;
   width: 0;
-  transition: all 0.5s ease-in-out;
+  left: 0;
+  transition: all 0.3s ease;
   pointer-events: none;
 }
 
-.search {
-  padding: 5px;
-  margin-left: auto;
-  border: none;
-  border-radius: 4px;
-}
+
 
 .nav-links li:hover {
   color: #0ff;
@@ -156,7 +160,7 @@ header {
 
 .anime-header-card {
   position: absolute;
-  width: 200px;
+  width: min(200px, 80%);
   height: 300px;
   text-align: justify;
   transition: 0.5s;
@@ -171,7 +175,7 @@ header {
   color: #fff;
   background-color: transparent;
   border: none;
-  font-size: xxx-large;
+  font-size: 3rem;
   font-family: monospace;
   font-weight: bold;
   left: 400px;
@@ -235,7 +239,7 @@ header {
   gap: 10px;
   opacity: 0;
 
-  transition: background-color 0.3 ease, opacity 0.3 ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
   z-index: 2;
   pointer-events: none;
 }
@@ -303,8 +307,6 @@ header {
   border-radius: 5px;
 }
 
-
-/* 3d rotating style */
 
 
 
