@@ -144,17 +144,15 @@ header {
 .header-container {
   position: relative;
   width: 100%;
-  height: 370px;
+  height: 400px;
   overflow: hidden;
 }
 
 .header-container h2 {
   position: absolute; /* Positioning relative to the header container */
   bottom: 0; /* Aligns to the bottom */
-  left: 0; /* Aligns to the left */
-  right: 0; /* Aligns to the right */
+  left: 300px; /* Aligns to the left */
   margin: 0; /* Remove default margin */
-  text-align: center; /* Center the heading */
   color: #00cccc;
 }
 
@@ -164,15 +162,15 @@ header {
   height: 300px;
   text-align: justify;
   transition: 0.5s;
-  left: calc(50% - 110px);
-  top: 0;
+  left: calc(50% - 500px);
+  top: 25px;
 }
 
 #next,
 #prev {
   position: absolute;
   top: 40%;
-  color: #fff;
+  color: #0ff;
   background-color: transparent;
   border: none;
   font-size: 3rem;
@@ -182,8 +180,12 @@ header {
 }
 
 #next {
-  left: unset;
-  right: 400px;
+  left: 675px;
+  right: unset;
+}
+#prev {
+  right: unset;
+  left: 25px
 }
 
 
@@ -193,9 +195,13 @@ header {
   height: 100%;
   object-fit: cover;
   display: block;
+  border: 2px solid #0ff; /* or your preferred color */
   border-radius: 12px;
-
+  overflow: hidden; /* Ensures overlay and image stay rounded */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
+
+
 
 .anime-header-card::after {
   content: "";
@@ -207,6 +213,7 @@ header {
   background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
   z-index: 1;
   pointer-events: none;
+  border-radius: 12px;
 }
 
 
@@ -242,16 +249,17 @@ header {
   transition: background-color 0.3s ease, opacity 0.3s ease;
   z-index: 2;
   pointer-events: none;
+
+  border-radius: 12px;
 }
 
 
 .anime-header-card:hover .overlay {
-  background-color: rgba(0, 0, 0, 0.8);
+ background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
   pointer-events: auto;
+   
 }
-
-
 
 .overlay button {
   padding: 8px 12px;
